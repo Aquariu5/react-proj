@@ -1,0 +1,49 @@
+.MenuButton {
+    background: greenyellow;
+    border: 2px solid;
+    width: 20vw;
+    font: 22px bold;
+}
+.MenuButton:hover {
+    cursor: pointer;
+    background: green;
+    border-bottom: 6px solid honeydew ;
+}
+
+.MusicButton {
+    background: royalblue;
+    border: 2px solid;
+    width: 20vw;
+    font: 22px bold;
+}
+
+.MusicButton:hover {
+    cursor: pointer;
+    background: slateblue;
+}
+
+.Alert {
+    background: wheat;
+    border-radius: 5%;
+    width: 20vw;
+    opacity: 0.5;
+}
+
+.AlertOff {
+    display: none;
+    background: wheat;
+    border-radius: 5%;
+    width: 20vw;
+    opacity: 0.5;
+}
+.LeftButton {
+	background: darkgoldenrod;
+	height: 10vh;
+	width: 10vw;
+    font: 20px bold;
+}
+
+.LeftButton:hover {
+    cursor: pointer;
+    background: darkorange;
+}
