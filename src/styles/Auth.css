@@ -1,0 +1,10 @@
+.Auth {
+    background: brown;
+    display: flex;
+    height: 90vh;
+    justify-content: center;
+    flex-direction: column;
+    font: 22px bold;
+    align-items: center;
+    padding-left: 10px;
+  }

@@ -3,6 +3,7 @@ import { useSelector} from 'react-redux'
 import Calendar from './left/Calendar';
 import DoDembelya from './left/DoDembelya';
 import Logo from './left/Logo';
+import LogOut from './left/LogOut';
 const Left = (props) => {
     const display = useSelector((state) => state.displayReducer.display);
     console.log('Leftdisplay', display);
@@ -11,6 +12,7 @@ const Left = (props) => {
         <Calendar/>
         <DoDembelya/>
         <Logo/>
+        <LogOut/>
         <div></div>
     </div>
 }

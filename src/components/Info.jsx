@@ -20,22 +20,22 @@ const Info = (props) => {
         console.log('Входная страница', page);
         console.log(page == 'Помощь');
         switch(page) {
-            case 'Главная':
-                console.log('Отрисуем главную')
-                return <DataBasePage/>
-            case 'Помощь':
-                console.log('Отрисуем помощь')
-                return <HelpPage/>
-            case 'Контакты':
-                return <ContactsPage/>
-            case 'Музыка':
-                return <MusicPage/>
-            case 'Замечания':
-                return <NoticePage/>
-            case 'Об авторе':
-                return <AboutPage/>
-            case 'Страны':
-                return <Countries/>   
+            // case 'Главная':
+            //     console.log('Отрисуем главную')
+            //     return <DataBasePage/>
+            // case 'Помощь':
+            //     console.log('Отрисуем помощь')
+            //     return <HelpPage/>
+            // case 'Контакты':
+            //     return <ContactsPage/>
+            // case 'Музыка':
+            //     return <MusicPage/>
+            // case 'Замечания':
+            //     return <NoticePage/>
+            // case 'Об авторе':
+            //     return <AboutPage/>
+            // case 'Страны':
+            //     return <Countries/>   
             default:
                 console.log('Я хз что делать', page)
         }

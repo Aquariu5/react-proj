@@ -1,0 +1,7 @@
+.Left {
+	height: 90vh;
+	width: 10vw;
+	display: flex;
+	
+	background: purple
+}

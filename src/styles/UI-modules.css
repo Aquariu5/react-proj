@@ -1,0 +1,11 @@
+.MenuButton {
+    background: green;
+    border-radius: 2px;
+    width: 20vw;
+}
+
+.LeftButton {
+	background: blue;
+	height: 10vw;
+	width: 10vw;
+}

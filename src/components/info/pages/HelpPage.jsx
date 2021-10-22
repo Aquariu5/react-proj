@@ -1,4 +1,3 @@
-
 import { useSelector} from 'react-redux';
 import Header from '../Header';
 import cl from '../../../styles/Info.module.css';
