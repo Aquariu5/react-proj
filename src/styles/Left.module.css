@@ -4,6 +4,7 @@
 	width: 10vw;
 	display: flex;
 	flex-direction: column;
+	min-width: 10vw;
 	background: purple
 }
 
@@ -19,6 +20,7 @@
 	background-color: skyblue;
 	margin: 5px;
 	padding: 10px;
+	min-width: 10vw;
 }
 
 .Logo {

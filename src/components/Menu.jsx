@@ -15,7 +15,7 @@ const Menu = (props) => {
     const history = useHistory();
     console.log('history', history);
     const ChangePage = (name) => {
-        dispath({type: "SET_PAGE", payload: name.split(":")[0]});
+        /*dispath({type: "SET_PAGE", payload: name.split(":")[0]});*/
         console.log('new page', name.split(":")[1]);
         history.push('/' + name.split(":")[1]);
     }

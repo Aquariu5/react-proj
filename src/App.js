@@ -9,10 +9,13 @@ import Auth from './components/Auth';
 import { useSelector, useDispatch } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import AppRouter from './components/router/AppRouter';
-
+import { useEffect } from 'react';
+import Left from './components/Left';
 
 function App() {
+
   let [state, setState] = useState(1);
+
   const changeApp = (display) => {
     displayApp = display;
     console.log(`changed from App, disp = ${displayApp}`);
@@ -21,12 +24,21 @@ function App() {
   } 
   //const auth = localStorage.getItem('auth');
   const auth = useSelector(state => state.authReducer.auth);
+  const [style, setStyle] = useState('');
+  console.log('style', style);
   const dispatch = useDispatch();
   if (localStorage.getItem('auth')) {
     dispatch({type: "SET_AUTH", payload: true});
   }
   let displayApp;
 
+  const [isLoading, setLoading] = useState(true);
+
+  useEffect(() => {
+    let st = auth ? 'Main' : 'MainAuth';
+    setStyle(st);
+    setLoading(false);
+  }, [auth])
   //до роутов
   // компоненты Main и  Info перестали быть нужными
   // return (
@@ -55,7 +67,19 @@ function App() {
             <div></div>
           )
         }
-          <AppRouter/>
+          <div className={style}>
+            {auth ?
+            (
+              <Left/>
+            )
+            :
+            (
+              <div></div>
+            )
+            }
+            <AppRouter style={style}/>
+          </div> 
+
           <Footer/>
       </div>
         

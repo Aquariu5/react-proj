@@ -7,10 +7,11 @@ import HelpPage from '../info/pages/HelpPage';
 import ContactsPage from '../info/pages/ContactsPage';
 import MusicPage from '../info/pages/MusicPage';
 import AboutPage from '../info/pages/AboutPage';
-import Left from '../Left';
 import NoticePage from '../info/pages/NoticePage';
 import NewsPage from '../info/pages/news/NewsPage';
 import NewPage from '../info/pages/news/NewPage';
+import Countries from '../info/pages/Countries';
+import {publicRoutes, privateRoutes} from './routes'
 /*<Auth/>
 :
 <div>
@@ -20,75 +21,89 @@ import NewPage from '../info/pages/news/NewPage';
 
 const AppRouter = (props) => {
     const auth = useSelector(state => state.authReducer.auth);
-    console.log('auth', auth);
+    console.log('stylefromparent', props.style);
+    
+
+    // return (
+    //         auth ?
+    //             <Switch>
+    //                 <div className={props.style}>
+    //                     <Route path='/main'>
+    //                             <DataBasePage/>
+    //                     </Route>
+    //                     <Route path='/attention'>
+    //                             <NoticePage/>
+    //                     </Route>
+    //                     <Route path='/help'>
+    //                             <HelpPage/>
+    //                     </Route>
+    //                     <Route path='/contacts'>
+    //                             <ContactsPage/>
+    //                     </Route>
+    //                     <Route path='/music'>
+    //                             <MusicPage/>
+    //                     </Route>
+    //                     <Route path='/about' exact>
+    //                             <AboutPage/>
+    //                     </Route>
+    //                     <Route path='/news' exact>
+    //                             <NewsPage/>
+    //                     </Route>
+    //                     <Route path='/news/:id' exact>
+    //                             <NewPage/>
+    //                     </Route>
+    //                     <Route path='/countries' exact>
+    //                             <Countries/>
+    //                     </Route>
+    //                     <Redirect to='/main'/>
+    //                 </div>
+    //             </Switch>
+    //         :
+    //             <Switch>
+    //                 <div className={props.style}>
+    //                     <Route path='/auth'>
+    //                     <Auth/>
+    //                     </Route>
+    //                     <Redirect to='/auth'/>
+    //                 </div>
+    //             </Switch>
+    //         );
+// }
+
     return (
-            auth ? (
-                <Switch>
-                <div>
-                    <Route path='/main'>
-                        <div className="Main">
-                            <Left/>
-                            <DataBasePage/>
-                        </div>
-                    </Route>
-                    <Route path='/attention'>
-                        <div className="Main">
-                            <Left/>
-                            <NoticePage/>
-                        </div>
-                    </Route>
-                    <Route path='/help'>
-                        <div className="Main"> 
-                            <Left/>
-                            <HelpPage/>
-                        </div>
-                    </Route>
-                    <Route path='/contacts'>
-                        <div className="Main">
-                            <Left/>
-                            <ContactsPage/>
-                        </div>
-                    </Route>
-                    <Route path='/music'>
-                        <div className="Main">
-                            <Left/>
-                            <MusicPage/>
-                        </div>
-                    </Route>
-                    <Route path='/about' exact>
-                        <div className="Main">
-                            <Left/>
-                            <AboutPage/>
-                        </div>
-                    </Route>
-                    <Route path='/news' exact>
-                        <div className="Main">
-                            <Left/>
-                            <NewsPage/>
-                        </div>
-                    </Route>
-                    <Route path='/news/:id' exact>
-                        <div className="Main">
-                            <Left/>
-                            <NewPage/>
-                        </div>
-                    </Route>
+        auth ?
+            <Switch>
+                <div className={props.style}>
+                    {
+                    publicRoutes.map(route =>
+                        <Route 
+                            component={route.component}
+                            path={route.path}
+                            exact={route.exact}
+                            key={route.path}
+                        />
+                    )
+                    }
                     <Redirect to='/main'/>
                 </div>
-                </Switch>
-            ) 
-            :
-            (
-                <Switch>
-                    <div>
-                        <Route path='/auth'>
-                        <Auth/>
-                        </Route>
-                        <Redirect to='/auth'/>
-                    </div>
-                </Switch>
-            )
-            );
-}
 
+            </Switch>
+            :
+            <Switch>
+                <div className={props.style}>
+                    {
+                    privateRoutes.map(route =>
+                        <Route 
+                            component={route.component}
+                            path={route.path}
+                            exact={route.exact}
+                            key={route.path}
+                        />
+                    )
+                    }
+                    <Redirect to='/auth'/>
+                </div>
+            </Switch>
+    );
+}
 export default AppRouter

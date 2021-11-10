@@ -15,5 +15,7 @@ export const now_time = () => {
         m = '0' + m;
     if (s < 10)
         s = '0' + s;
+    if (d < 10)
+        d = '0' + d;    
     return `${y}-${M}-${d} ${h}:${m}:${s}`;
 }
