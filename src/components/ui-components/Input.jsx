@@ -7,7 +7,7 @@ function Input(props) {
 	return (
 		<div>
 			<div>{props.name}</div>
-			<input className={cl.Input} {...props}/>
+			<input placeholder="Название..." className={cl.Input} {...props}/>
 		</div>
 
 	);

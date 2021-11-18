@@ -20,7 +20,7 @@ const DataBasePage = (props) => {
     <div>
         <Header name="База данных беспилотных летательных аппаратов"/>
         <div>
-            <DB start="0" end="6"/>
+            <DB start="0" end="5"/>
             <div className={cl.UnderBase}>
                 <Keys/>
                 <MenuButton onClick={setPage} name="Страны"/>
